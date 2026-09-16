@@ -1,75 +1,98 @@
-# React + TypeScript + Vite
+# Dokumentasi Teknologi
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Hero Section](./previews/hero.png)
 
-Currently, two official plugins are available:
+Dokumen ini menjelaskan teknologi yang digunakan, beserta alasan pemilihan masing-masing teknologi.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 1. React Hook Form
 
-## React Compiler
+**Alasan penggunaan :**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Digunakan untuk menangani state suatu form.
 
-## Expanding the ESLint configuration
+Beberapa alasan utama penggunaannya:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- API yang mudah diintegrasikan dengan komponen React.
+- Mengurangi unnecessary re-render.
+- Memudahkan pengelolaan state pada form yang memiliki banyak field.
+- Mendukung integrasi dengan library validasi seperti Zod.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 2. Zod
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+**Alasan penggunaan :**
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Digunakan untuk mendefinisikan schema dan melakukan validasi terhadap data.
 
-```
+Beberapa alasan utama penggunaannya:
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+- Type-safe dan terintegrasi dengan TypeScript.
+- Schema validasi dapat digunakan kembali.
+- Validasi menjadi lebih terstruktur.
+- Mudah diintegrasikan dengan React Hook Form.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 3. Tailwind CSS
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+**Alasan penggunaan :**
 
-```
+Digunakan untuk styling dan membangun UI.
+
+Beberapa alasan utama penggunaannya:
+
+- Mempercepat proses pengembangan UI.
+- Memiliki utility class yang konsisten dan lengkap.
+- Memudahkan pembuatan responsive design.
+- Mengurangi kebutuhan untuk membuat custom CSS.
+- Memudahkan maintenance karena styling dapat ditemukan langsung pada component.
+- Membantu menjaga konsistensi spacing, typography, dan lain-lainnya (theming).
+
+## 4. TanStack React Router
+
+**Alasan penggunaan :**
+
+Digunakan untuk menangani routing dan navigasi.
+
+Beberapa alasan utama penggunaannya:
+
+- Type-safe routing.
+- Mendukung nested routes.
+- Memudahkan pengelolaan URL dan route parameters.
+
+## 5. Framer Motion
+
+**Alasan penggunaan :**
+
+Digunakan untuk menambahkan animasi dan transisi.
+
+Beberapa alasan penggunaannya:
+
+- API yang mudah digunakan pada React component.
+- Mendukung entrance dan exit animation.
+- Mendukung gesture dan interaction animation.
+- Membantu meningkatkan user experience.
+- Animasi dapat dibuat tanpa harus mengelola CSS animation sendiri.
+
+## 6. Lucide React
+
+**Alasan penggunaan :**
+
+Digunakan sebagai library icon.
+
+Beberapa alasan penggunaannya:
+
+- Memiliki banyak pilihan icon yang umum digunakan.
+- Mudah dikustomisasi melalui props.
+- Memiliki style icon yang konsisten.
+- Mengurangi kebutuhan untuk membuat atau menyimpan icon secara manual.
+
+## 7. React i18next
+
+**Alasan penggunaan :**
+
+Digunakan untuk menangani internationalization dan translation.
+
+Beberapa alasan penggunaannya:
+
+- Memisahkan text dari source code component.
+- Memudahkan penambahan bahasa baru.
+- Mendukung dynamic translation.
+- Membantu menjaga codebase tetap terstruktur ketika jumlah translation semakin banyak.
