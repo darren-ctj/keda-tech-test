@@ -2,6 +2,8 @@
 
 ![Hero Section](./previews/hero.png)
 
+👆 [Klik disini untuk lihat live demo](https://myerplandingpage.netlify.app/)
+
 Dokumen ini menjelaskan teknologi yang digunakan, beserta alasan pemilihan masing-masing teknologi.
 
 ## 1. React Hook Form
