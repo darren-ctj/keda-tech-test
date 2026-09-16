@@ -1,28 +1,27 @@
-import { forwardRef, type InputHTMLAttributes, type ReactNode } from 'react';
+import { forwardRef, type InputHTMLAttributes } from 'react';
 import { AlertCircle } from 'lucide-react';
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   error?: string;
-  icon?: ReactNode;
   containerClassName?: string;
 }
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ label, error, icon, containerClassName = '', className = '', ...props }, ref) => {
+  ({ label, error, containerClassName = '', className = '', ...props }, ref) => {
     return (
-      <div className={`space-y-1.5 ${containerClassName}`}>
+      <div className={`space-y-1.75 ${containerClassName}`}>
         {label && (
-          <label className="text-xs font-semibold text-foreground flex items-center gap-1.5">
-            {icon}
+          <label htmlFor={label} className="text-xs font-semibold text-foreground flex items-center gap-1.5">
             <span>{label}</span>
           </label>
         )}
 
         <input
+          id={label}
           ref={ref}
           className={`w-full px-4 py-2.5 bg-input text-foreground border ${error ? 'border-destructive focus:ring-destructive' : 'border-border focus:border-primary'
-            } rounded-xl text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring transition-all ${className}`}
+            } rounded-[10px] text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring transition-all ${className}`}
           {...props}
         />
 

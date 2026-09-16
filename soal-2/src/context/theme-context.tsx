@@ -12,7 +12,7 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [theme, setThemeState] = useState<Theme>(() => {
-    const savedTheme = localStorage.getItem('nexa-theme') as Theme;
+    const savedTheme = localStorage.getItem('My ERP-theme') as Theme;
     if (savedTheme) return savedTheme;
     return 'light';
   });
@@ -30,7 +30,7 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) =
       root.classList.remove('dark');
     }
 
-    localStorage.setItem('nexa-theme', theme);
+    localStorage.setItem('My ERP-theme', theme);
   }, [theme]);
 
   return (

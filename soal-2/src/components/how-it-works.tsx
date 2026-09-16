@@ -23,7 +23,7 @@ export const HowItWorks: React.FC = () => {
             {t.howItWorks.label}
           </Badge>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-foreground">
             {t.howItWorks.heading}
           </h2>
         </div>
@@ -42,14 +42,14 @@ export const HowItWorks: React.FC = () => {
                   <div className="w-12 h-12 rounded-xl bg-background border border-border flex items-center justify-center group-hover:border-primary transition-colors shadow-inner">
                     {stepIcons[idx]}
                   </div>
-                  <span className="text-3xl font-extrabold text-muted-foreground group-hover:text-primary transition-colors font-mono">
+                  <span className="text-3xl font-semibold text-muted-foreground group-hover:text-primary transition-colors font-mono">
                     {step.number}
                   </span>
                 </div>
 
                 {/* Content */}
                 <div className="space-y-3">
-                  <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
+                  <h3 className="text-2xl font-semibold text-foreground group-hover:text-primary transition-colors">
                     {step.title}
                   </h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">

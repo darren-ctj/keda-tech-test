@@ -8,7 +8,7 @@ export interface CardProps extends HTMLAttributes<HTMLDivElement> {
 export const Card: React.FC<CardProps> = ({ children, className = '', ...props }) => {
   return (
     <div
-      className={`bg-card text-card-foreground border border-border rounded-2xl p-6 shadow-md transition-all duration-300 ${className}`}
+      className={`bg-card text-card-foreground border rounded-2xl p-6 shadow-md transition-all duration-300 ${className}`}
       {...props}
     >
       {children}
@@ -30,7 +30,7 @@ export const CardTitle: React.FC<HTMLAttributes<HTMLHeadingElement> & { children
   ...props
 }) => {
   return (
-    <h3 className={`text-xl font-bold text-foreground tracking-tight ${className}`} {...props}>
+    <h3 className={`text-xl font-semibold text-foreground tracking-tight ${className}`} {...props}>
       {children}
     </h3>
   );
