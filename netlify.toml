@@ -1,4 +1,4 @@
 [build]
   base = "soal-2"
   command = "npm run build"
-  publish = "soal-2/dist"
+  publish = "dist"
