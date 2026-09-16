@@ -209,3 +209,17 @@
     @apply font-heading;
   }
 }
+
+/* Animation */
+@keyframes spin-around {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-around {
+  animation: spin-around 3s linear infinite;
+}

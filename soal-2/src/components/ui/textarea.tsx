@@ -1,5 +1,4 @@
 import { forwardRef, type TextareaHTMLAttributes, type ReactNode } from 'react';
-import { AlertCircle } from 'lucide-react';
 
 export interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   label?: string;
@@ -13,7 +12,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
     return (
       <div className={`space-y-1.75 ${containerClassName}`}>
         {label && (
-          <label htmlFor={label} className="text-xs font-semibold text-foreground flex items-center gap-1.5">
+          <label htmlFor={label} className="inline-block text-xs font-semibold text-foreground">
             {label}
           </label>
         )}
@@ -27,9 +26,8 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
         />
 
         {error && (
-          <p className="text-xs text-destructive flex items-center gap-1 pt-0.5">
-            <AlertCircle className="w-3 h-3 shrink-0" />
-            <span>{error}</span>
+          <p className="text-xs text-destructive">
+            {error}
           </p>
         )}
       </div>

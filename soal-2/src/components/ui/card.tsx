@@ -3,15 +3,33 @@ import { type HTMLAttributes, type ReactNode } from 'react';
 export interface CardProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
   className?: string;
+  showGradient?: boolean;
 }
 
-export const Card: React.FC<CardProps> = ({ children, className = '', ...props }) => {
+export const Card: React.FC<CardProps> = ({ children, className = '', showGradient = true, ...props }) => {
   return (
     <div
-      className={`bg-card text-card-foreground border rounded-2xl p-6 shadow-md transition-all duration-300 ${className}`}
+      className={`relative bg-card text-card-foreground border rounded-2xl p-6 shadow-md transition-all duration-300 overflow-hidden ${className}`}
       {...props}
     >
-      {children}
+      {showGradient && <div
+        className="
+          absolute 
+          inset-0
+          bg-gradient-to-t
+          from-primary/5
+          from-0%
+          via-card
+          via-50%
+          to-card
+          pointer-events-none
+        "
+      />
+      }
+
+      <div className="relative z-10">
+        {children}
+      </div>
     </div>
   );
 };

@@ -9,7 +9,7 @@ export const translations = {
       login: "Login App",
     },
     hero: {
-      eyebrow: "BUSINESS MANAGEMENT, SIMPLIFIED",
+      eyebrow: "Smarter Business. Simpler Management.",
       headline: "Run Your Business with a Smarter ERP.",
       description:
         "Manage inventory, track incoming and outgoing goods, monitor profits, and analyze your sales performance all from one simple, centralized business management platform built to help you stay organized and make better decisions.",
@@ -17,6 +17,7 @@ export const translations = {
       secondaryCta: "Explore Pricing",
       supportingText:
         "Built for entrepreneurs who want less guesswork and more control.",
+      trustedByText: "Trusted by 30+ enterprise companies",
     },
     dashboard: {
       revenue: "Revenue",
@@ -166,8 +167,7 @@ export const translations = {
             "For growing businesses that want to understand their performance.",
           cta: "Choose Business",
           features: [
-            "Incoming & outgoing goods tracking",
-            "Profit tracking",
+            "All Basic plan features",
             "Sales analytics & charts",
             "24/7 support",
           ],
@@ -179,10 +179,7 @@ export const translations = {
             "For entrepreneurs who want deeper insights and smarter tools.",
           cta: "Choose Entrepreneur",
           features: [
-            "Incoming & outgoing goods tracking",
-            "Profit tracking",
-            "Sales analytics & charts",
-            "24/7 support",
+            "All Business plan features",
             "Excel data export",
             "AI-powered income prediction",
           ],
@@ -247,7 +244,7 @@ export const translations = {
       login: "Masuk Aplikasi",
     },
     hero: {
-      eyebrow: "MANAJEMEN BISNIS, LEBIH SEDERHANA",
+      eyebrow: "Bisnis Lebih Cerdas. Kelola Lebih Mudah.",
       headline: "Kelola Bisnis dengan ERP yang Lebih Cerdas.",
       description:
         "Kelola stok, catat barang masuk dan keluar, pantau keuntungan, dan analisis performa penjualan semuanya dalam satu platform manajemen bisnis terpusat yang sederhana, sehingga Anda dapat menjaga bisnis tetap terorganisir dan mengambil keputusan dengan lebih baik.",
@@ -255,6 +252,7 @@ export const translations = {
       secondaryCta: "Lihat Harga",
       supportingText:
         "Dibuat untuk pengusaha yang ingin mengurangi ketidakpastian dan memiliki kendali lebih besar atas bisnisnya.",
+      trustedByText: "Dipercayai oleh lebih dari 30 perusahaan",
     },
     dashboard: {
       revenue: "Pendapatan",
@@ -404,8 +402,7 @@ export const translations = {
             "Untuk bisnis yang sedang berkembang dan ingin memahami performanya.",
           cta: "Pilih Business",
           features: [
-            "Pencatatan barang masuk & keluar",
-            "Pencatatan keuntungan",
+            "Semua fitur paket Basic",
             "Analisis penjualan & chart",
             "Dukungan 24/7",
           ],
@@ -417,10 +414,7 @@ export const translations = {
             "Untuk pengusaha yang membutuhkan insight lebih mendalam dan fitur yang lebih cerdas.",
           cta: "Pilih Entrepreneur",
           features: [
-            "Pencatatan barang masuk & keluar",
-            "Pencatatan keuntungan",
-            "Analisis penjualan & chart",
-            "Dukungan 24/7",
+            "Semua fitur paket Business",
             "Export data ke Excel",
             "Prediksi penghasilan berbasis AI",
           ],

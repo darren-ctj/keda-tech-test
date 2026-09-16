@@ -1,5 +1,6 @@
 import { Card } from "../ui/card";
-import { BarChart3 } from "lucide-react"
+import { BarChart3 } from "lucide-react";
+import { motion } from "framer-motion";
 
 export const SalesIllustration = () => {
     const categories = [
@@ -11,7 +12,8 @@ export const SalesIllustration = () => {
     return (
         <Card
             aria-hidden
-            className="group/sales relative mt-9 overflow-hidden rounded-md mask-b-from-90% pointer-events-none"
+            showGradient={false}
+            className="group/sales relative mt-9 overflow-hidden rounded-md pointer-events-none"
         >
             <div className="flex items-center justify-between">
                 <div>
@@ -30,9 +32,15 @@ export const SalesIllustration = () => {
             </div>
 
             <div className="mt-6 grid grid-cols-[100px_1fr] items-center gap-5">
-                <div className="relative mx-auto size-24">
+                <motion.div
+                    initial={{ scale: 0.75, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    viewport={{ once: true }}
+                    className="relative mx-auto size-24"
+                >
                     <div
-                        className="absolute inset-0 rounded-full"
+                        className="absolute inset-0 rounded-full transition-transform duration-500 group-hover/sales:scale-105"
                         style={{
                             background:
                                 'conic-gradient(#1e9df1 0deg 210deg, #e1eaef 210deg 290deg, #f0f3f4 290deg 360deg)',
@@ -49,7 +57,7 @@ export const SalesIllustration = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </motion.div>
 
                 <div className="space-y-3">
                     {categories.map((category, index) => (
@@ -65,14 +73,17 @@ export const SalesIllustration = () => {
                             </div>
 
                             <div className="h-1.5 overflow-hidden rounded-full bg-foreground/10">
-                                <div
+                                <motion.div
+                                    initial={{ width: 0 }}
+                                    whileInView={{ width: `${category.value}%` }}
+                                    transition={{ duration: 0.8, delay: 0.2 + index * 0.15, ease: "easeOut" }}
+                                    viewport={{ once: true }}
                                     className={[
                                         'h-full rounded-full transition-all duration-500',
                                         index === 0
                                             ? 'bg-linear-to-b from-[#38BDF8] to-primary group-hover/sales:w-[90%]'
                                             : 'bg-foreground/20',
                                     ].join(' ')}
-                                    style={{ width: `${category.value}%` }}
                                 />
                             </div>
                         </div>
@@ -97,4 +108,4 @@ export const SalesIllustration = () => {
             </div>
         </Card>
     );
-};
+};

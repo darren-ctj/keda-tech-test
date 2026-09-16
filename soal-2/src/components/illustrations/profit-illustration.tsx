@@ -1,5 +1,6 @@
 import { Card } from '../ui/card';
 import { TrendingUp } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export const ProfitIllustration = () => {
     const bars = [38, 52, 44, 68, 58, 76, 88];
@@ -7,7 +8,8 @@ export const ProfitIllustration = () => {
     return (
         <Card
             aria-hidden
-            className="group/profit relative mt-9 overflow-hidden rounded-md mask-b-from-90% pointer-events-none"
+            showGradient={false}
+            className="group/profit relative mt-9 overflow-hidden rounded-md pointer-events-none"
         >
             <div className="flex items-start justify-between">
                 <div>
@@ -37,14 +39,17 @@ export const ProfitIllustration = () => {
                             key={index}
                             className="relative z-10 flex h-full flex-1 items-end"
                         >
-                            <div
+                            <motion.div
+                                initial={{ height: 0, opacity: 0 }}
+                                whileInView={{ height: `${height}%`, opacity: 1 }}
+                                transition={{ duration: 0.6, delay: 0.1 + index * 0.08, ease: "easeOut" }}
+                                viewport={{ once: true }}
                                 className={[
                                     'w-full rounded-t-sm transition-all duration-300 ease-out',
                                     index === bars.length - 1
                                         ? 'bg-linear-to-b from-[#38BDF8] to-primary group-hover/profit:opacity-100'
                                         : 'bg-foreground/10 group-hover/profit:bg-foreground/15',
                                 ].join(' ')}
-                                style={{ height: `${height}%` }}
                             />
                         </div>
                     ))}
@@ -72,4 +77,4 @@ export const ProfitIllustration = () => {
             </div>
         </Card>
     );
-};
+};

@@ -7,8 +7,11 @@ import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { Button } from './ui/button';
 import { Card } from './ui/card';
-import { Send, CheckCircle, Mail } from 'lucide-react';
-import { Badge } from './ui/badge'
+import { Send, CheckCircle, Mail, Phone } from 'lucide-react';
+import { Badge } from './ui/badge';
+import { TextGenerateEffect } from './ui/text-generate-effect';
+import { getFadeInBlurAnimation } from '../lib/animation';
+import { motion } from 'framer-motion';
 
 export const Contact: React.FC = () => {
   const { t } = useLanguage();
@@ -46,17 +49,20 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-background text-foreground overflow-hidden">
+    <section id="contact" className="py-16 sm:py-24 bg-background text-foreground overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          <div className="lg:col-span-5">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+          <motion.div {...getFadeInBlurAnimation(0.1)} className="lg:col-span-5">
             <Badge variant="accent" className="mb-4">
+              <Phone className="size-3.5 mr-0.5" />
               {t.contact.label}
             </Badge>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight text-foreground leading-tight mb-2">
-              {t.contact.heading}
-            </h2>
+            <TextGenerateEffect
+              tag="h2"
+              words={t.contact.heading}
+              className="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight text-foreground mb-2"
+            />
 
             <p className="text-muted-foreground text-base sm:text-lg leading-relaxed font-normal mb-6">
               {t.contact.description}
@@ -74,9 +80,9 @@ export const Contact: React.FC = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="lg:col-span-7">
+          <motion.div {...getFadeInBlurAnimation(0.3)} className="lg:col-span-7">
             <Card className="p-6 sm:p-8 backdrop-blur-xl">
               {submitted ? (
                 <div className="py-12 text-center space-y-4 animate-in fade-in zoom-in duration-300">
@@ -151,9 +157,10 @@ export const Contact: React.FC = () => {
                 </form>
               )}
             </Card>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
   );
 };
+

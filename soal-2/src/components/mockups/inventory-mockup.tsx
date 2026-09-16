@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import {
     AlertTriangle,
     BarChart3,
@@ -325,7 +326,14 @@ const ProductRow = ({
 // Main component
 export function InventoryMockup() {
     return (
-        <div aria-hidden="true" className="relative w-full overflow-hidden rounded-2xl border bg-background shadow-2xl mt-9 mask-b-from-90% pointer-events-none">
+        <motion.div
+            initial={{ opacity: 0, y: 60, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.7, ease: [0.21, 0.47, 0.32, 0.98] }}
+            viewport={{ once: true }}
+            aria-hidden="true"
+            className="relative w-full overflow-hidden rounded-2xl border bg-background shadow-2xl mt-9 pointer-events-none"
+        >
             <div className="flex">
                 <Sidebar />
                 <main className="min-w-0 flex-1 h-150 overflow-hidden">
@@ -494,6 +502,6 @@ export function InventoryMockup() {
                     </div>
                 </main>
             </div>
-        </div>
+        </motion.div>
     );
-}
+}

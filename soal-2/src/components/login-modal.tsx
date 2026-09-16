@@ -147,9 +147,8 @@ export const LoginModal: React.FC = () => {
             </div>
 
             {errors.password && (
-              <p className="text-xs text-destructive flex items-center gap-1 pt-0.5">
-                <AlertCircle className="w-3 h-3 shrink-0" />
-                <span>{errors.password.message}</span>
+              <p className="text-xs text-destructive">
+                {errors.password.message}
               </p>
             )}
           </div>
@@ -187,7 +186,7 @@ export const LoginModal: React.FC = () => {
 
         </form>
 
-        <div className="pt-4 border-t border-border text-center text-xs text-muted-foreground">
+        <div className="pt-4 border-t text-center text-xs text-muted-foreground">
           <span>{t.loginModal.noAccount} </span>
           <button
             onClick={() => {

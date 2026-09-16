@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import {
     ArrowDownRight,
     ArrowUpRight,
@@ -208,12 +209,16 @@ const SalesChart = () => {
                         className="fill-primary opacity-[0.08]"
                     />
 
-                    <path
+                    <motion.path
                         d="M0 145 C45 137 65 128 105 132 S165 118 210 122 S270 104 315 108 S370 87 420 93 S480 67 525 76 S590 43 640 52 S675 32 700 35"
                         fill="none"
                         className="stroke-primary"
                         strokeWidth="2.5"
                         vectorEffect="non-scaling-stroke"
+                        initial={{ pathLength: 0 }}
+                        whileInView={{ pathLength: 1 }}
+                        transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+                        viewport={{ once: true }}
                     />
 
                     <circle
@@ -357,7 +362,13 @@ const AiForecast = () => {
 // Main component
 export const DashboardMockup = () => {
     return (
-        <div className="relative w-full overflow-hidden rounded-2xl border bg-background shadow-2xl mask-b-from-90%">
+        <motion.div
+            initial={{ opacity: 0, y: 60, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.7, ease: [0.21, 0.47, 0.32, 0.98] }}
+            viewport={{ once: true }}
+            className="relative w-full overflow-hidden rounded-2xl border bg-background shadow-2xl"
+        >
             <div className="flex">
                 <Sidebar />
                 <main className="min-w-0 flex-1 h-150 overflow-hidden">
@@ -418,6 +429,6 @@ export const DashboardMockup = () => {
                     </div>
                 </main>
             </div>
-        </div>
+        </motion.div>
     );
-}
+}

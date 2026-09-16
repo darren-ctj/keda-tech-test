@@ -1,11 +1,9 @@
 import React from 'react';
 import { useLanguage } from '../context/language-context';
-import { useTheme } from '../context/theme-context';
 import { Button } from './ui/button';
-import { X, Globe, Sun, Moon } from 'lucide-react';
+import { X, Globe, MenuIcon, ArrowRight } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
-  const { theme, toggleTheme } = useTheme();
   const { language, setLanguage, t, handleOpenLoginModal } = useLanguage();
 
   const [menuState, setMenuState] = React.useState(false);
@@ -57,18 +55,6 @@ export const Navbar: React.FC = () => {
 
               <div className="flex items-center gap-2 lg:hidden">
                 <button
-                  onClick={toggleTheme}
-                  className="p-2 rounded-xl bg-card border text-foreground hover:bg-accent transition-all cursor-pointer"
-                  aria-label="Toggle Theme"
-                >
-                  {theme === 'dark' ? (
-                    <Sun className="w-4 h-4 text-amber-400" />
-                  ) : (
-                    <Moon className="w-4 h-4 text-slate-700" />
-                  )}
-                </button>
-
-                <button
                   onClick={() => setLanguage(language === 'en' ? 'id' : 'en')}
                   className="flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1.5 rounded-xl bg-card border text-primary cursor-pointer"
                 >
@@ -85,8 +71,7 @@ export const Navbar: React.FC = () => {
                     aria-hidden
                     className="in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 size-4.5 m-auto flex flex-col items-center justify-center gap-[6px] duration-200"
                   >
-                    <span className="bg-foreground h-0.5 w-full rounded-full" />
-                    <span className="bg-foreground h-0.5 w-full rounded-full" />
+                    <MenuIcon />
                   </div>
 
                   <X className="in-data-[state=active]:rotate-0 in-data-[state=active]:scale-100 in-data-[state=active]:opacity-100 absolute inset-0 m-auto size-5 -rotate-180 scale-0 opacity-0 duration-200 text-primary" />
@@ -100,7 +85,7 @@ export const Navbar: React.FC = () => {
                   <li key={index}>
                     <button
                       onClick={() => scrollToSection(item.id)}
-                      className="text-muted-foreground hover:text-foreground block duration-150 cursor-pointer"
+                      className="text-muted-foreground hover:text-primary block duration-150 cursor-pointer"
                     >
                       <span>{item.name}</span>
                     </button>
@@ -110,43 +95,28 @@ export const Navbar: React.FC = () => {
             </div>
 
             <div className="in-data-[state=active]:block lg:in-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end max-lg:space-y-6 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-4">
-              <div className="hidden lg:flex items-center gap-3">
+              <div className="flex items-center bg-card border rounded-full p-1 text-xs font-semibold">
+                <Globe className="w-3.5 h-3.5 ml-2 mr-2.5 text-muted-foreground" />
+
                 <button
-                  onClick={toggleTheme}
-                  className="p-2 rounded-xl bg-card border text-foreground hover:bg-accent hover:text-accent-foreground transition-all cursor-pointer"
-                  aria-label="Toggle Theme"
-                  title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+                  onClick={() => setLanguage('en')}
+                  className={`px-2.5 py-1 rounded-full transition-all cursor-pointer ${language === 'en'
+                    ? 'bg-linear-to-b from-[#38BDF8] to-primary text-primary-foreground shadow-sm'
+                    : 'text-muted-foreground hover:text-foreground'
+                    }`}
                 >
-                  {theme === 'dark' ? (
-                    <Sun className="size-3.5 text-amber-400" />
-                  ) : (
-                    <Moon className="size-3.5 text-slate-700" />
-                  )}
+                  EN
                 </button>
 
-                <div className="flex items-center bg-card border rounded-full p-1 text-xs font-semibold">
-                  <Globe className="w-3.5 h-3.5 ml-2 mr-2.5 text-muted-foreground" />
-
-                  <button
-                    onClick={() => setLanguage('en')}
-                    className={`px-2.5 py-1 rounded-full transition-all cursor-pointer ${language === 'en'
-                      ? 'bg-linear-to-b from-[#38BDF8] to-primary text-primary-foreground shadow-sm'
-                      : 'text-muted-foreground hover:text-foreground'
-                      }`}
-                  >
-                    EN
-                  </button>
-
-                  <button
-                    onClick={() => setLanguage('id')}
-                    className={`px-2.5 py-1 rounded-full transition-all cursor-pointer ${language === 'id'
-                      ? 'bg-linear-to-b from-[#38BDF8] to-primary text-primary-foreground shadow-sm'
-                      : 'text-muted-foreground hover:text-foreground'
-                      }`}
-                  >
-                    ID
-                  </button>
-                </div>
+                <button
+                  onClick={() => setLanguage('id')}
+                  className={`px-2.5 py-1 rounded-full transition-all cursor-pointer ${language === 'id'
+                    ? 'bg-linear-to-b from-[#38BDF8] to-primary text-primary-foreground shadow-sm'
+                    : 'text-muted-foreground hover:text-foreground'
+                    }`}
+                >
+                  ID
+                </button>
               </div>
 
               <div className="lg:hidden border-t pt-4" style={{ height: "calc(100vh - 13.6rem)" }}>
@@ -185,6 +155,7 @@ export const Navbar: React.FC = () => {
                   }}
                 >
                   {t.hero.primaryCta}
+                  <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
               </div>
             </div>

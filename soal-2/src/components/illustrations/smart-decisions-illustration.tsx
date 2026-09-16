@@ -1,11 +1,13 @@
 import { Card } from "../ui/card";
 import { Table } from "lucide-react";
+import { motion } from "framer-motion";
 
 export const SmartDecisionsIllustration = () => {
     return (
         <Card
             aria-hidden
-            className="group/ai relative mt-9 overflow-hidden rounded-md mask-b-from-90% pointer-events-none"
+            showGradient={false}
+            className="group/ai relative mt-9 overflow-hidden rounded-md pointer-events-none"
         >
             <div className="flex items-center justify-between">
                 <div>
@@ -31,27 +33,39 @@ export const SmartDecisionsIllustration = () => {
                     className="absolute inset-0 h-full w-full overflow-visible"
                     fill="none"
                 >
-                    <path
+                    <motion.path
                         d="M0 62 C30 58, 42 42, 70 48 C95 54, 105 30, 135 36 C160 42, 175 22, 205 28"
                         stroke="#1e9df1"
                         strokeWidth="2"
                         strokeLinecap="round"
+                        initial={{ pathLength: 0 }}
+                        whileInView={{ pathLength: 1 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        viewport={{ once: true }}
                     />
 
-                    <path
+                    <motion.path
                         d="M205 28 C230 20, 245 25, 265 14 C280 8, 290 12, 300 4"
                         stroke="#1e9df1"
                         strokeOpacity="0.45"
                         strokeWidth="2"
                         strokeDasharray="4 4"
                         strokeLinecap="round"
+                        initial={{ pathLength: 0 }}
+                        whileInView={{ pathLength: 1 }}
+                        transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+                        viewport={{ once: true }}
                     />
 
-                    <circle
+                    <motion.circle
                         cx="300"
                         cy="4"
                         r="3.5"
                         fill="#1e9df1"
+                        initial={{ scale: 0, opacity: 0 }}
+                        whileInView={{ scale: 1, opacity: 1 }}
+                        transition={{ delay: 1.4, duration: 0.3 }}
+                        viewport={{ once: true }}
                         className="transition-transform duration-300 group-hover/ai:scale-125"
                     />
                 </svg>
@@ -73,4 +87,4 @@ export const SmartDecisionsIllustration = () => {
             </div>
         </Card>
     );
-};
+};
