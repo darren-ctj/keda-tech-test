@@ -2,15 +2,11 @@ import React from 'react';
 import { useLanguage } from '../context/language-context';
 import { Button } from './ui/button';
 import {
-  TrendingUp,
-  DollarSign,
-  Package,
-  Sparkles,
-  ArrowUpRight,
   CheckCircle2,
   ChevronRight,
   ArrowRight,
 } from 'lucide-react';
+import { DashboardMockup } from './mockups/dashboard-mockup';
 
 const BoltIcon: React.FC<{ className?: string }> = ({ className }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor">
@@ -136,156 +132,9 @@ export const Hero: React.FC = () => {
               <span>{t.hero.supportingText}</span>
             </p>
 
-            <div className="relative mt-10 sm:mt-16 overflow-hidden p-3 sm:p-6 max-w-5xl mx-auto">
-              <div className="rounded-3xl bg-gradient-to-b from-primary/20 via-border/40 to-transparent absolute inset-0 border border-border pointer-events-none" />
-              <div className="bg-card/95 backdrop-blur-xl ring-border relative rounded-2xl p-4 sm:p-6 shadow-2xl shadow-primary/10 border border-border space-y-6">
-                <div className="flex items-center justify-between pb-4 border-b border-border">
-                  <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 rounded-full bg-rose-500/80" />
-                    <div className="w-3 h-3 rounded-full bg-amber-500/80" />
-                    <div className="w-3 h-3 rounded-full bg-emerald-500/80" />
-                    <span className="ml-2 text-xs font-medium text-muted-foreground">
-                      My ERP Executive Dashboard
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-1.5 text-xs text-primary bg-accent border border-border px-2.5 py-1 rounded-full font-medium">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary animate-ping" />
-                    Live Sync
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
-                  <div className="bg-background border border-border rounded-xl p-3.5 space-y-1 hover:border-primary transition-colors">
-                    <div className="flex items-center justify-between text-muted-foreground text-xs font-medium">
-                      <span>{t.dashboard.revenue}</span>
-                      <DollarSign className="w-3.5 h-3.5 text-primary" />
-                    </div>
-                    <div className="text-base sm:text-xl font-semibold text-foreground tracking-tight">
-                      {t.dashboard.revenueValue}
-                    </div>
-                    <div className="flex items-center gap-1 text-[11px] font-semibold text-emerald-500">
-                      <ArrowUpRight className="w-3 h-3" />
-                      <span>+14.2%</span>
-                    </div>
-                  </div>
-
-                  <div className="bg-background border border-border rounded-xl p-3.5 space-y-1 hover:border-primary transition-colors">
-                    <div className="flex items-center justify-between text-muted-foreground text-xs font-medium">
-                      <span>{t.dashboard.profit}</span>
-                      <TrendingUp className="w-3.5 h-3.5 text-primary" />
-                    </div>
-                    <div className="text-base sm:text-xl font-semibold text-foreground tracking-tight">
-                      {t.dashboard.profitValue}
-                    </div>
-                    <div className="flex items-center gap-1 text-[11px] font-semibold text-emerald-500">
-                      <ArrowUpRight className="w-3 h-3" />
-                      <span>+8.5%</span>
-                    </div>
-                  </div>
-
-                  <div className="bg-background border border-border rounded-xl p-3.5 space-y-1 hover:border-primary transition-colors">
-                    <div className="flex items-center justify-between text-muted-foreground text-xs font-medium">
-                      <span>{t.dashboard.products}</span>
-                      <Package className="w-3.5 h-3.5 text-primary" />
-                    </div>
-                    <div className="text-base sm:text-xl font-semibold text-foreground tracking-tight">
-                      {t.dashboard.productsValue}
-                    </div>
-                    <div className="text-[11px] font-medium text-muted-foreground">
-                      {t.dashboard.productsStatus}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="bg-background border border-border rounded-xl p-4 space-y-3">
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs font-semibold text-foreground">
-                      {t.dashboard.salesTrend}
-                    </span>
-                    <span className="text-[11px] text-muted-foreground">Jan - Jul 2026</span>
-                  </div>
-
-                  <div className="h-28 flex items-end justify-between gap-2 pt-2 px-1">
-                    {[
-                      { month: 'Jan', height: '40%', val: '12M' },
-                      { month: 'Feb', height: '55%', val: '15M' },
-                      { month: 'Mar', height: '45%', val: '13.5M' },
-                      { month: 'Apr', height: '70%', val: '18M' },
-                      { month: 'May', height: '65%', val: '17M' },
-                      { month: 'Jun', height: '85%', val: '21M' },
-                      { month: 'Jul', height: '95%', val: '24.5M', active: true },
-                    ].map((bar, idx) => (
-                      <div key={idx} className="flex-1 flex flex-col items-center gap-1.5 h-full justify-end group">
-                        <div
-                          className="w-full bg-muted hover:bg-accent rounded-t-md relative overflow-hidden transition-all duration-300"
-                          style={{ height: bar.height }}
-                        >
-                          <div
-                            className={`absolute inset-0 ${bar.active ? 'bg-primary' : 'bg-primary/40 group-hover:bg-primary/80'
-                              }`}
-                          />
-                        </div>
-                        <span
-                          className={`text-[10px] ${bar.active ? 'text-primary font-semibold' : 'text-muted-foreground'
-                            }`}
-                        >
-                          {bar.month}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  <div className="bg-background border border-border rounded-xl p-3.5 space-y-2">
-                    <div className="text-xs font-semibold text-foreground flex items-center justify-between">
-                      <span>{t.dashboard.recentTransactions}</span>
-                      <span className="text-[10px] text-primary">3 new</span>
-                    </div>
-                    <div className="space-y-1.5 text-xs">
-                      <div className="flex items-center justify-between p-1.5 rounded-lg bg-muted/60">
-                        <div className="flex items-center gap-2">
-                          <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                          <span className="text-foreground font-medium">Product A</span>
-                        </div>
-                        <span className="text-emerald-500 font-semibold">+Rp2.4M</span>
-                      </div>
-                      <div className="flex items-center justify-between p-1.5 rounded-lg bg-muted/60">
-                        <div className="flex items-center gap-2">
-                          <div className="w-1.5 h-1.5 rounded-full bg-rose-500" />
-                          <span className="text-foreground font-medium">Product B</span>
-                        </div>
-                        <span className="text-rose-500 font-semibold">-Rp800K</span>
-                      </div>
-                      <div className="flex items-center justify-between p-1.5 rounded-lg bg-muted/60">
-                        <div className="flex items-center gap-2">
-                          <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                          <span className="text-foreground font-medium">Product C</span>
-                        </div>
-                        <span className="text-emerald-500 font-semibold">+Rp1.7M</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="bg-accent border border-border rounded-xl p-3.5 space-y-2 flex flex-col justify-between">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-1.5 text-xs font-semibold text-accent-foreground">
-                        <Sparkles className="w-3.5 h-3.5 text-amber-500 animate-pulse" />
-                        <span>{t.dashboard.aiForecast}</span>
-                      </div>
-                      <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-primary text-primary-foreground">
-                        PRO
-                      </span>
-                    </div>
-                    <p className="text-[11px] text-muted-foreground leading-snug">
-                      {t.dashboard.aiForecastDesc}
-                    </p>
-                    <div className="w-full bg-background rounded-full h-1.5 overflow-hidden">
-                      <div className="bg-primary h-full w-4/5 rounded-full" />
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="relative max-w-5xl mx-auto mt-10 sm:mt-16 overflow-hidden p-3 sm:p-6 border rounded-3xl pointer-events-none" aria-hidden="true">
+              <div className="bg-gradient-to-b from-primary/20 via-border/40 to-transparent absolute inset-0" />
+              <DashboardMockup />
             </div>
           </div>
         </section>

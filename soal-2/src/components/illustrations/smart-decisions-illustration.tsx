@@ -5,7 +5,7 @@ export const SmartDecisionsIllustration = () => {
     return (
         <Card
             aria-hidden
-            className="group/ai relative mt-9 overflow-hidden rounded-md"
+            className="group/ai relative mt-9 overflow-hidden rounded-md mask-b-from-90% pointer-events-none"
         >
             <div className="flex items-center justify-between">
                 <div>

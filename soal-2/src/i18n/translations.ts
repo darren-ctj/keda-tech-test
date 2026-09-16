@@ -6,7 +6,7 @@ export const translations = {
       about: "About",
       pricing: "Pricing",
       contact: "Contact",
-      login: "Login",
+      login: "Login App",
     },
     hero: {
       eyebrow: "BUSINESS MANAGEMENT, SIMPLIFIED",
@@ -37,10 +37,10 @@ export const translations = {
       outgoing: "Outgoing",
     },
     about: {
-      label: "ABOUT My ERP",
+      label: "ABOUT MyERP",
       heading: "Your Business Data Should Work for You.",
       description:
-        "My ERP brings your daily business activities into one place from tracking incoming and outgoing goods to monitoring profits and understanding your sales performance. With the right data at your fingertips, you can spend less time recording numbers and more time growing your business.",
+        "MyERP brings your daily business activities into one place from tracking incoming and outgoing goods to monitoring profits and understanding your sales performance. With the right data at your fingertips, you can spend less time recording numbers and more time growing your business.",
       features: [
         {
           title: "Track Inventory",
@@ -193,7 +193,7 @@ export const translations = {
       label: "GET IN TOUCH",
       heading: "Have Questions? Let's Talk.",
       description:
-        "Whether you want to learn more about My ERP, need help choosing a plan, or simply want to ask us something, we're here to help.",
+        "Whether you want to learn more about MyERP, need help choosing a plan, or simply want to ask us something, we're here to help.",
       form: {
         name: "Name",
         namePlaceholder: "Enter your name",
@@ -218,11 +218,11 @@ export const translations = {
         "Manage inventory, track incoming and outgoing goods, monitor profits, and analyze your sales performance all from one simple, centralized business management platform built to help you stay organized and make better decisions.",
       navTitle: "Navigation",
       contactTitle: "Contact Us",
-      copyright: "© 2026 My ERP. All rights reserved.",
+      copyright: "© 2026 MyERP. All rights reserved.",
     },
     loginModal: {
       title: "Welcome Back",
-      subtitle: "Log in to your My ERP account.",
+      subtitle: "Log in to your MyERP account.",
       emailLabel: "Email",
       emailPlaceholder: "Enter your email",
       passwordLabel: "Password",
@@ -244,7 +244,7 @@ export const translations = {
       about: "Tentang Kami",
       pricing: "Harga",
       contact: "Kontak",
-      login: "Masuk",
+      login: "Masuk Aplikasi",
     },
     hero: {
       eyebrow: "MANAJEMEN BISNIS, LEBIH SEDERHANA",
@@ -275,10 +275,10 @@ export const translations = {
       outgoing: "Keluar",
     },
     about: {
-      label: "TENTANG My ERP",
+      label: "TENTANG MyERP",
       heading: "Biarkan Data Bekerja untuk Bisnis Anda.",
       description:
-        "My ERP menyatukan aktivitas bisnis harian Anda dalam satu tempat mulai dari mencatat barang masuk dan keluar hingga memantau keuntungan dan memahami performa penjualan. Dengan data bisnis yang tersedia dengan mudah, Anda dapat mengurangi waktu untuk mencatat angka dan lebih fokus mengembangkan bisnis.",
+        "MyERP menyatukan aktivitas bisnis harian Anda dalam satu tempat mulai dari mencatat barang masuk dan keluar hingga memantau keuntungan dan memahami performa penjualan. Dengan data bisnis yang tersedia dengan mudah, Anda dapat mengurangi waktu untuk mencatat angka dan lebih fokus mengembangkan bisnis.",
       features: [
         {
           title: "Track Inventory",
@@ -431,7 +431,7 @@ export const translations = {
       label: "HUBUNGI KAMI",
       heading: "Punya Pertanyaan? Mari Bicara.",
       description:
-        "Baik Anda ingin mengetahui lebih lanjut tentang My ERP, membutuhkan bantuan dalam memilih paket, atau sekadar ingin bertanya, kami siap membantu.",
+        "Baik Anda ingin mengetahui lebih lanjut tentang MyERP, membutuhkan bantuan dalam memilih paket, atau sekadar ingin bertanya, kami siap membantu.",
       form: {
         name: "Nama",
         namePlaceholder: "Masukkan nama Anda",
@@ -456,11 +456,11 @@ export const translations = {
         "Kelola stok, catat barang masuk dan keluar, pantau keuntungan, dan analisis performa penjualan semuanya dalam satu platform manajemen bisnis terpusat yang sederhana, sehingga Anda dapat menjaga bisnis tetap terorganisir dan mengambil keputusan dengan lebih baik.",
       navTitle: "Navigasi",
       contactTitle: "Hubungi Kami",
-      copyright: "© 2026 My ERP. Hak cipta dilindungi.",
+      copyright: "© 2026 MyERP. Hak cipta dilindungi.",
     },
     loginModal: {
       title: "Selamat Datang Kembali",
-      subtitle: "Masuk ke akun My ERP Anda.",
+      subtitle: "Masuk ke akun MyERP Anda.",
       emailLabel: "Email",
       emailPlaceholder: "Masukkan email Anda",
       passwordLabel: "Password",

@@ -70,7 +70,7 @@ export const Contact: React.FC = () => {
 
                 <div>
                   <div className="text-xs text-muted-foreground font-medium">Direct Email</div>
-                  <div className="font-semibold text-foreground">hello@My ERP.com</div>
+                  <div className="font-semibold text-foreground">hello@myerp.com</div>
                 </div>
               </div>
             </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../context/language-context';
-import { Layers, Mail } from 'lucide-react';
+import { Mail } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const { t, handleOpenLoginModal } = useLanguage();
@@ -14,15 +14,15 @@ export const Footer: React.FC = () => {
     <footer className="bg-card border-t text-muted-foreground pt-16 pb-8 transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12">
-          <div className="md:col-span-5 space-y-4">
-            <a href="#" className="flex items-center gap-2.5 text-foreground font-semibold text-2xl tracking-tight">
-              <div className="w-8 h-8 rounded-xl bg-primary flex items-center justify-center text-primary-foreground shadow-md">
-                <Layers className="w-4 h-4" />
-              </div>
-              <span className="font-semibold tracking-wider text-foreground">
-                My ERP
-              </span>
+          <div className="md:col-span-5 space-y-1.5">
+            <a
+              className="inline-block"
+              href="#"
+              aria-label="home"
+            >
+              <img src="logo.png" alt="Logo" className="h-8 cursor-pointer" />
             </a>
+
             <p className="text-sm text-muted-foreground max-w-sm leading-relaxed">
               {t.footer.tagline}
             </p>
@@ -75,11 +75,11 @@ export const Footer: React.FC = () => {
 
             <div className="text-sm space-y-2">
               <a
-                href="mailto:hello@My ERP.com"
+                href="mailto:hello@myerp.com"
                 className="flex items-center gap-2 hover:text-primary transition-colors"
               >
                 <Mail className="w-4 h-4 text-primary" />
-                <span>hello@My ERP.com</span>
+                <span>hello@myerp.com</span>
               </a>
             </div>
           </div>

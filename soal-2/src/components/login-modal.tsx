@@ -5,7 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { Input } from './ui/input';
 import { Button } from './ui/button';
-import { X, Eye, EyeOff, Layers, CheckCircle, AlertCircle } from 'lucide-react';
+import { X, Eye, EyeOff, CheckCircle, AlertCircle } from 'lucide-react';
 
 export const LoginModal: React.FC = () => {
   const { isLoginModalOpen, handleCloseLoginModal, t } = useLanguage();
@@ -68,7 +68,7 @@ export const LoginModal: React.FC = () => {
 
   const handleForgotPassword = () => setForgotMsg(true);
 
-  if (!isLoginModalOpen) return <></>
+  if (!isLoginModalOpen) return <></>;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-background/80 backdrop-blur-md animate-in fade-in duration-200">
@@ -78,7 +78,7 @@ export const LoginModal: React.FC = () => {
         aria-hidden="true"
       />
 
-      <div className="relative w-full max-w-md bg-card border border-border rounded-2xl p-6 sm:p-8 shadow-2xl z-10 space-y-6 animate-in zoom-in-95 duration-200">
+      <div className="relative w-full max-w-md bg-card border rounded-2xl p-6 pt-9 sm:p-8 sm:pt-12 shadow-2xl z-10 space-y-6 animate-in zoom-in-95 duration-200">
         <button
           onClick={handleCloseLoginModal}
           className="absolute top-4 right-4 p-1.5 text-muted-foreground hover:text-foreground hover:bg-accent rounded-lg transition-colors cursor-pointer"
@@ -87,13 +87,13 @@ export const LoginModal: React.FC = () => {
           <X className="w-5 h-5" />
         </button>
 
-        <div className="text-center space-y-2">
-          <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-primary-foreground mx-auto shadow-md">
-            <Layers className="w-5 h-5" />
-          </div>
-          <h3 className="text-2xl font-semibold text-foreground tracking-tight">
-            {t.loginModal.title}
+        <div className="text-center">
+          <img src="logo.png" alt="Logo" className="mx-auto mb-3 h-5.5" />
+
+          <h3 className="text-2xl font-semibold text-foreground tracking-tight mb-1">
+            {t.loginModal.title} !
           </h3>
+
           <p className="text-sm text-muted-foreground">
             {t.loginModal.subtitle}
           </p>

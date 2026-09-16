@@ -11,6 +11,7 @@ import {
 import { ProfitIllustration } from './illustrations/profit-illustration';
 import { SalesIllustration } from './illustrations/sales-illustration';
 import { SmartDecisionsIllustration } from './illustrations/smart-decisions-illustration'
+import { InventoryMockup } from './mockups/inventory-mockup';
 
 
 export const AboutFeatures: React.FC = () => {
@@ -53,11 +54,7 @@ export const AboutFeatures: React.FC = () => {
               {t.about.features[0].description}
             </p>
 
-            <div className="mask-b-from-95% -ml-2 -mt-2 mr-0.5 pl-2 pt-2">
-              <div className="relative mx-auto mt-8 h-72 overflow-hidden rounded-tl-[var(--radius)] border border-transparent bg-card shadow ring-1 ring-foreground/5 sm:h-96">
-                <></>
-              </div>
-            </div>
+            <InventoryMockup />
           </Card>
 
           <Card className="overflow-hidden p-6">

@@ -2,7 +2,7 @@ import React from 'react';
 import { useLanguage } from '../context/language-context';
 import { useTheme } from '../context/theme-context';
 import { Button } from './ui/button';
-import { X, Globe, Layers, Sun, Moon } from 'lucide-react';
+import { X, Globe, Sun, Moon } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
@@ -51,14 +51,8 @@ export const Navbar: React.FC = () => {
               <a
                 href="#"
                 aria-label="home"
-                className="flex items-center gap-2.5 text-foreground font-semibold text-2xl tracking-tight group"
               >
-                <div className="w-9 h-9 rounded-xl bg-primary flex items-center justify-center text-primary-foreground shadow-md shadow-primary/20 group-hover:scale-105 transition-transform">
-                  <Layers className="w-5 h-5" />
-                </div>
-                <span className="font-semibold tracking-wider text-foreground">
-                  My ERP
-                </span>
+                <img src="logo.png" alt="Logo" className="h-6 cursor-pointer" />
               </a>
 
               <div className="flex items-center gap-2 lg:hidden">

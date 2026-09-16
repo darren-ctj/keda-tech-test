@@ -7,7 +7,7 @@ export const ProfitIllustration = () => {
     return (
         <Card
             aria-hidden
-            className="group/profit relative mt-9 overflow-hidden rounded-md opacity-95"
+            className="group/profit relative mt-9 overflow-hidden rounded-md mask-b-from-90% pointer-events-none"
         >
             <div className="flex items-start justify-between">
                 <div>
