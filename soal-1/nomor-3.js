@@ -1,6 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 
+// Notes : Menggunakan DFS
 const retrieveTotalEvenNum = (obj) => {
   const arrayObj = Object.values(obj);
 
@@ -22,7 +23,7 @@ const retrieveTotalEvenNum = (obj) => {
 };
 
 // Unit Tests
-test("should return 6", () => {
+test("Should return 6", () => {
   const input = {
     outer: 2,
     obj: {
@@ -38,7 +39,7 @@ test("should return 6", () => {
   assert.equal(retrieveTotalEvenNum(input), 6);
 });
 
-test("should return 12", () => {
+test("Should return 12", () => {
   const input = {
     a: 2,
     b: { b: 2, bb: { b: 3, bb: { b: 2 } } },

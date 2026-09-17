@@ -1,6 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 
+// Notes : Kompleksitas Waktu O(n)
 const findMaximumSubarraySum = (arr, length) => {
   if (!Array.isArray(arr) || typeof length !== "number" || length < 1)
     return null;
@@ -34,21 +35,21 @@ const findMaximumSubarraySum = (arr, length) => {
 };
 
 // Unit Tests
-test("should return 700", () => {
+test("Should return 700", () => {
   const inputArray = [100, 200, 300, 400];
   const inputLengthNumber = 2;
 
   assert.equal(findMaximumSubarraySum(inputArray, inputLengthNumber), 700);
 });
 
-test("should return 39", () => {
+test("Should return 39", () => {
   const inputArray = [1, 4, 2, 10, 23, 3, 1, 0, 20];
   const inputLengthNumber = 4;
 
   assert.equal(findMaximumSubarraySum(inputArray, inputLengthNumber), 39);
 });
 
-test("should return 5", () => {
+test("Should return 5", () => {
   const inputArray = [-3, 4, 0, -2, 6, -1];
   const inputLengthNumber = 2;
 
