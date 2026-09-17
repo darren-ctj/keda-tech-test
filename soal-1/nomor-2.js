@@ -15,7 +15,7 @@ const findMaximumSubarraySum = (arr, length) => {
     const outgoingNumber = arr[i - 1];
     const incomingNumber = arr[i + length - 1];
 
-    if (!outgoingNumber) {
+    if (typeof outgoingNumber !== "number") {
       currentTotal = arr
         .slice(i, i + length)
         .reduce((total, item) => total + item, 0);
