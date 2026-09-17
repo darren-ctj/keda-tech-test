@@ -6,25 +6,28 @@ const findMaximumSubarraySum = (arr, length) => {
     return null;
 
   const maxIndex = arr.length - length;
-
   if (maxIndex < 0) return null;
 
   let maxSum;
+  let currentTotal;
 
   for (let i = 0; i < maxIndex + 1; i++) {
     const outgoingNumber = arr[i - 1];
     const incomingNumber = arr[i + length - 1];
 
     if (!outgoingNumber) {
-      maxSum = arr
+      currentTotal = arr
         .slice(i, i + length)
         .reduce((total, item) => total + item, 0);
+
+      maxSum = currentTotal;
 
       continue;
     }
 
-    if (incomingNumber > outgoingNumber)
-      maxSum = maxSum - outgoingNumber + incomingNumber;
+    currentTotal = currentTotal - outgoingNumber + incomingNumber;
+
+    if (currentTotal > maxSum) maxSum = currentTotal;
   }
 
   return maxSum;
